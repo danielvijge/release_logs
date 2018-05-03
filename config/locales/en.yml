@@ -23,6 +23,7 @@ en:
   field_query_queue: "Release log queue"
   field_group_by_issue_type_true: "By issue type"
   field_group_by_issue_type_false: "By categories"
+  field_release_is_stable: "Stable release"
 
   release_logs_label_everywhere: "Everywhere"
   release_logs_label_query_term_in_issue: "Issue title or description"
@@ -185,6 +186,11 @@ en:
   release_logs_label_no_release_logs_results: "No Release Logs found."
 
   release_logs_release_notifications: "Release log notifications"
+
+  release_logs_label_release_stable_status: "Stable status"
+  release_logs_label_release_stable: "Stable release"
+  release_logs_label_release_unstable: "Unstable release"
+  release_logs_label_release_stable_unknown: "Unknown"
 
   # Help text
   release_logs_help_configuration_recipients: "Add here a comma separated list of email addresses that will receive release logs for this project."

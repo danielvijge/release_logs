@@ -53,9 +53,12 @@ class ReleaseLogQueue < ActiveRecord::Base
       title.gsub("{{#{interpolation[0]}}}", interpolation[1].call(project))
     end
 
+    # some magic for if there are no versions at all
+    #if Version.count > 0
     VERSION_INTERPOLATIONS.to_a.inject(title) do |title, interpolation|
       title.gsub("{{#{interpolation[0]}}}", interpolation[1].call(version))
     end
+    #end
   end
 
   def recipient_addresses

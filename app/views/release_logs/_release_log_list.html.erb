@@ -23,6 +23,7 @@
                 <th><%= release_logs_label_for(:project) %></th>
             <% end %>
             <th><%= release_logs_label_for(:status) %></th>
+            <th><%= release_logs_label_for(:release_stable_status) %></th>
             <th><%= release_logs_label_for(:description) %></th>
             <th><%= release_logs_label_for(:user_information) %></th>
             <th><%= release_logs_label_for(:release_date) %></th>
@@ -51,6 +52,12 @@
                 <td class="release-log-status <%= status %>">
                     <i class="icon icon-status-<%= status %>"></i>
                     <strong><%= release_log_status release_log %></strong>
+                </td>
+
+                <% stable = release_log.release_is_stable %>
+                <td class="release-log-stable <%= stable %>">
+                    <i class="icon icon-stable-<%= stable %>"></i>
+                    <strong><%= release_log_stable release_log %></strong>
                 </td>
 
                 <td class="release-log-column-description">

@@ -43,8 +43,15 @@
             <tr>
                 <th><%= release_logs_label_for(:status) %></th>
                 <td><strong><%= release_log_status @release_log %></strong></td>
+                <th><%= release_logs_label_for(:release_stable_status) %></th>
+                <td><strong><%= release_log_stable @release_log %></strong></td>
+            </tr>
+
+            <tr>
                 <th><%= release_logs_label_for(:release_date) %></th>
                 <td><strong><%= format_time @release_log.released_at %></strong></td>
+                <th>&nbsp;</th>
+                <td>&nbsp;</td>
             </tr>
 
             <tr>

@@ -15,6 +15,18 @@ module ReleaseLogsHelper
     release_logs_label_for(:"release_log_status_#{release_log.status}")
   end
 
+    # Resolves the literal of a release log's status.
+  def release_log_stable(release_log)
+    case release_log.release_is_stable
+      when true
+        release_logs_label_for(:release_stable)
+      when false
+        release_logs_label_for(:release_unstable)
+      else
+        release_logs_label_for(:release_stable_unknown)
+    end
+  end
+
   # Resolves the literal describing the release status of an issue.
   def issue_release_verb(release_log)
     status =  release_log.status
