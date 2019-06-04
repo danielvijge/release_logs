@@ -91,8 +91,8 @@ jQuery(document).ready(function () {
             }
         );
 
-        var wikiToolbar = new jsToolBar(document.getElementById('new_release_log_entry_note_' + counter));
-        wikiToolbar.draw();
+        // var wikiToolbar = new jsToolBar(document.getElementById('new_release_log_entry_note_' + counter));
+        // wikiToolbar.draw();
 
         $('#no-release-log-entries').hide();
     });
