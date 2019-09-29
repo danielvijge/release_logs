@@ -1,5 +1,5 @@
 <h1 style="font-size: 16px; font-weight: bold; background: #075490; border: 1px solid #084B8A; color: #fff; padding: 10px; margin-bottom: 5px;">
-    <%= @release_log.title %> - <%= @release_log.project.name %> - <%= release_logs_label_for(:release_publish_notification) %>
+    <%= @release_log.title %> - <%= @release_log.project.name %> <%= if !@release_log.release_log_queue.nil? then ['-',@release_log.release_log_queue.name].join(' ') end %>
 
     <% if @release_log.hotfix %>
         - <span style="color: #ff8000;"><%= release_logs_label_for(:hotfix) %></span>

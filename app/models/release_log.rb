@@ -82,10 +82,10 @@ class ReleaseLog < ActiveRecord::Base
   }
 
   validates :title, :presence => true, :length => { :maximum => 255 }
-  validates :released_at, :presence => { :unless => 'release_upon_publish' }
+  validates :released_at, presence: true, unless: :release_upon_publish
   validates :release_log_entries, :association_count => { :minimum => 1 }
-  validates :rollback_reason, :presence => { :if => 'rolled_back_at.present?' }
-  validates :cancellation_reason, :presence => { :if => 'cancelled_at.present?' }
+  validates :rollback_reason, presence: true, if: :rolled_back_at.present?
+  validates :cancellation_reason, presence: true, if: :cancelled_at.present?
   validate :release_log_queue_id
   validate :unique_issues
 

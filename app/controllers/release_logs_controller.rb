@@ -8,12 +8,12 @@ class ReleaseLogsController < ReleaseLogsBaseController
   helper :attachments
   helper :release_logs
 
-  before_filter :load_project
-  before_filter :authorize
-  before_filter :load_configuration
-  before_filter :load_dependencies
-  before_filter :load_versions
-  before_filter :load_release_log, :only => [:edit, :show, :update, :destroy, :clone, :send_notification]
+  before_action :load_project
+  before_action :authorize
+  before_action :load_configuration
+  before_action :load_dependencies
+  before_action :load_versions
+  before_action :load_release_log, :only => [:edit, :show, :update, :destroy, :clone, :send_notification]
 
   def index
     @limit = params[:limit] || DEFAULT_LIMIT
