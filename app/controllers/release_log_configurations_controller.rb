@@ -24,7 +24,7 @@ class ReleaseLogConfigurationsController < ReleaseLogsBaseController
   end
 
   def edit
-    @valid_project_selections << @release_log_configuration.project
+    # @valid_project_selections << @release_log_configuration.project
   end
 
   def update
